@@ -14,12 +14,19 @@ html {
 	line-height: 1.5;
 }
 
-body {
+/*body {
 	background-image: url('../images/mt2.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position-x: 20%;
 	overflow-x: hidden;
+}*/
+
+#source-image {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 @media only screen and (min-resolution: 2dppx) and (min-width: 950px),
