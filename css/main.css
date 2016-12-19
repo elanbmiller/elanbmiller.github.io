@@ -110,9 +110,10 @@ nav li {
 	margin-bottom: 1rem;
 
 	list-style: none;
+}
 
-	color: #b4bcf5;
-
+nav ul li{
+	color: #2c45b0;
 }
 
 nav li + li {
