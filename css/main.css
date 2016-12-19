@@ -47,7 +47,9 @@ body {
 h1 {
 	color: #333;
 	color: rgba(235, 82, 89, 0.9);
-
+	color: #d7e8f4;
+	text-shadow: -1px 0 rgba(235, 82, 89, 0.9), 0 1px rgba(235, 82, 89, 0.9), 1px 0 rgba(235, 82, 89, 0.9), 0 -1px rgba(235, 82, 89, 0.9)
+	
 	font-size: 12rem;
 	font-family: 'Open Sans', sans-serif;
 	
