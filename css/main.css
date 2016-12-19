@@ -34,7 +34,7 @@ body {
 	width: 100%;
 }
 
-/* If we can fit the text next to my head */
+
 @media only screen and (min-resolution: 2dppx) and (min-width: 950px),
 	only screen and (-webkit-device-pixel-ratio: 2) and (min-width: 950px)
  {
@@ -47,8 +47,8 @@ body {
 h1 {
 	color: #333;
 	color: #d7e8f4;
-	color: rgba(235, 82, 89, 0.9);
-	text-shadow: -1px 0 rgba(235, 82, 89, 0.9), 0 1px rgba(235, 82, 89, 0.9), 1px 0 rgba(235, 82, 89, 0.9), 0 -1px rgba(235, 82, 89, 0.9)
+	color: rgba(235, 82, 89, 0.5);
+	/* doesn't do anything without changing color -- text-shadow: -1px 0 rgba(235, 82, 89, 0.5), 0 1px rgba(235, 82, 89, 0.5), 1px 0 rgba(235, 82, 89, 0.5), 0 -1px rgba(235, 82, 89, 0.5)*/
 	
 	font-size: 12rem;
 	font-family: 'Open Sans', sans-serif;
@@ -58,7 +58,7 @@ h1 {
 	margin-top: 400px;
 }
 
-	/* If we can fit the text next to my head */
+	
 	@media only screen and (min-resolution: 2dppx) and (min-width: 950px),
 		only screen and (-webkit-device-pixel-ratio: 2) and (min-width: 950px)
 	{
