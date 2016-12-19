@@ -47,7 +47,7 @@ body {
 h1 {
 	color: #333;
 	color: #d7e8f4;
-	color: rgba(235, 82, 89, 0.5);
+	color: rgba(235, 82, 89, 0.7);
 	/* doesn't do anything without changing color -- text-shadow: -1px 0 rgba(235, 82, 89, 0.5), 0 1px rgba(235, 82, 89, 0.5), 1px 0 rgba(235, 82, 89, 0.5), 0 -1px rgba(235, 82, 89, 0.5)*/
 	
 	font-size: 12rem;
