@@ -79,7 +79,7 @@ a {
 		padding-bottom: .2em;
 		
 		text-decoration: underline;
-		color: #d7e84f;
+		color: rgba(235,82,89,1);
 	}
 
 	a:active {
