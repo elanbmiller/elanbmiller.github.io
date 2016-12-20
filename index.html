@@ -8,7 +8,8 @@
 		<link href='https://fonts.googleapis.com/css?family=Gentium+Book+Basic:400,700|Open+Sans:800' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" type="text/css" href="/css/main.css">
 	</head>
-	<body>
+	<body style="overflow:hidden; margin:0">
+		<div id="main">
 		<nav>
     		<ul>
         		<!--<li><a href="/">Home</a></li>
@@ -32,7 +33,14 @@
         			<li><a target="_blank" href="textfiles/12-6-16.pdf">Resume</a></li>
 				</ul>
 			</nav>
+			</div>
 			<script src="JS/FitText.js"></script>
+			<script>function autoResizeDiv(){
+				document.getElementById('main').style.height = window.innerHeight +'px';
+			}
+				window.onresize = autoResizeDiv;
+				autoResizeDiv();
+			</script>
 			<script>window.fitText(document.getElementById("myName"), 0.5);</script>
 			<script>
         	(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create','UA-18624606-1','auto');ga('send','pageview');
