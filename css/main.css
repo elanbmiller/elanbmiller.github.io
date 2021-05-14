@@ -7,20 +7,28 @@ li {
 	padding: 0;
 }
 
-html {
+html { 
+	background: url('../images/Giraffe4.jpg') no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+  }
+
+/* html {
 	color: #333;
 	font-family: 'Gentium Book Basic', serif;
 	font-size: 150%;
 	line-height: 1.5;
-}
+} */
 
-body {
+/* body {
 	background-image: url('../images/Giraffe4.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position-x: 20%;
 	overflow-x: hidden;
-}
+} */
 
 @media only screen and (min-resolution: 2dppx) and (min-width: 950px),
 	only screen and (-webkit-device-pixel-ratio: 2) and (min-width: 950px)
