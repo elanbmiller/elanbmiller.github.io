@@ -42,6 +42,18 @@ html {
 	width: 100%;
 }
 
+/* Fill the window so the name and blurb sit at the bottom left and the links along the bottom, at any size. */
+#main2 {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	min-height: 100dvh;
+}
+
+.container {
+	margin-top: auto;
+}
+
 
 @media only screen and (min-resolution: 2dppx) and (min-width: 950px),
 	only screen and (-webkit-device-pixel-ratio: 2) and (min-width: 950px)
@@ -62,6 +74,8 @@ h1 {
 	font-family: 'Open Sans', sans-serif;
 	
 	line-height: 1;
+	/* Always "Elan" over "Miller", even when the name shrinks to fit a short window. */
+	width: min-content;
 }
 
 	

@@ -32,6 +32,21 @@ const CHECKS = () => {
 		["Resume link fully on screen", lastLink.bottom <= h, `bottom at ${Math.round(lastLink.bottom)}px`],
 		["name no bigger than the width-based size", size <= w / 5 + 0.5, `${size}px > ${w / 5}px`],
 	];
+
+	// Layout: name on two lines at the left, blurb right under it, links centered along the bottom.
+	const nameBox = name.getBoundingClientRect();
+	const blurb = document.querySelector(".blurb p").getBoundingClientRect();
+	const nav = [...links].map((a) => a.getBoundingClientRect());
+	const navLeft = Math.min(...nav.map((r) => r.left)), navRight = Math.max(...nav.map((r) => r.right));
+	const navBottom = Math.max(...nav.map((r) => r.bottom));
+	results.push(
+		["name on two lines", Math.round(nameBox.height / size) === 2, `${Math.round(nameBox.height / size)} lines`],
+		["name at the left edge", nameBox.left < 1, `left at ${nameBox.left}px`],
+		["blurb at the left edge", blurb.left < 1, `left at ${blurb.left}px`],
+		["blurb directly under the name", Math.abs(blurb.top - nameBox.bottom) <= size * 0.3 + 20, `${Math.round(blurb.top - nameBox.bottom)}px gap`],
+		["links centered", Math.abs((navLeft + navRight) / 2 - w / 2) <= 2, `center at ${Math.round((navLeft + navRight) / 2)}px, window center ${w / 2}px`],
+		["links at the bottom of the window", h - navBottom <= 40, `${Math.round(h - navBottom)}px above the bottom`],
+	);
 	// The name should only shrink as much as needed: if it's below the width-based size, slightly bigger must overflow.
 	if (size < w / 5 - 0.5) {
 		const before = name.style.fontSize;
