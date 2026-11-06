@@ -33,19 +33,25 @@
 				var root = document.documentElement;
 				var fits = function () { return root.scrollHeight <= window.innerHeight; };
 				var resize = function () {
+					// Hide the scrollbar while measuring; otherwise it narrows the page and makes the name wrap early.
+					root.style.overflow = "hidden";
 					var hi = window.innerWidth / 5, lo = 16;
 					name.style.fontSize = hi + "px";
-					if (fits()) return;
-					while (hi - lo > 1) {
-						var mid = (hi + lo) / 2;
-						name.style.fontSize = mid + "px";
-						if (fits()) lo = mid; else hi = mid;
+					if (!fits()) {
+						while (hi - lo > 1) {
+							var mid = (hi + lo) / 2;
+							name.style.fontSize = mid + "px";
+							if (fits()) lo = mid; else hi = mid;
+						}
+						name.style.fontSize = lo + "px";
 					}
-					name.style.fontSize = lo + "px";
+					root.style.overflow = "";
 				};
 				resize();
 				window.addEventListener("resize", resize);
-				if (document.fonts) document.fonts.ready.then(resize);
+				window.addEventListener("load", resize);
+				// Web fonts change the text's size, so refit whenever one finishes loading.
+				if (document.fonts) document.fonts.addEventListener("loadingdone", resize);
 			})();
 			</script>
 			<script>
