@@ -26,8 +26,28 @@
 				</ul>
 			</nav>
 			</div>
-			<script src="JS/FitText.js"></script>
-			<script>window.fitText(document.getElementById("myName"), 0.5);</script>
+			<script>
+			// Size the name to the window width (as FitText did), then shrink it until the whole page fits without scrolling.
+			(function () {
+				var name = document.getElementById("myName");
+				var root = document.documentElement;
+				var fits = function () { return root.scrollHeight <= window.innerHeight; };
+				var resize = function () {
+					var hi = window.innerWidth / 5, lo = 16;
+					name.style.fontSize = hi + "px";
+					if (fits()) return;
+					while (hi - lo > 1) {
+						var mid = (hi + lo) / 2;
+						name.style.fontSize = mid + "px";
+						if (fits()) lo = mid; else hi = mid;
+					}
+					name.style.fontSize = lo + "px";
+				};
+				resize();
+				window.addEventListener("resize", resize);
+				if (document.fonts) document.fonts.ready.then(resize);
+			})();
+			</script>
 			<script>
         	(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create','UA-18624606-1','auto');ga('send','pageview');
     		</script>
