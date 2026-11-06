@@ -8,7 +8,7 @@ li {
 }
 
 html { 
-	background: url('../images/Giraffe4.jpg') no-repeat center center fixed; 
+	background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../images/Giraffe4.jpg') no-repeat center center fixed; 
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -55,7 +55,8 @@ html {
 h1 {
 	color: #333;
 	color: #d7e8f4;
-	color: rgba(235, 82, 89, 0.7);
+	color: rgb(235, 82, 89);
+	text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
 	/* doesn't do anything without changing color -- text-shadow: -1px 0 rgba(235, 82, 89, 0.5), 0 1px rgba(235, 82, 89, 0.5), 1px 0 rgba(235, 82, 89, 0.5), 0 -1px rgba(235, 82, 89, 0.5)*/
 	
 	font-size: 12rem;
@@ -106,25 +107,14 @@ nav {
 }
 
 nav ul {
-	display: block;
-	position: relative;
-	float: left;
-	left: 50%;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75rem;
+	padding: 1rem 0;
 }
 
 nav li {
-	position: relative;
-	right: 50%;
-
-	display: block;
-	float: left;
-	margin-bottom: 1rem;
-
 	list-style: none;
-}
-
-nav li + li {
-	margin-left: 1rem;
 }
 
 .button {
@@ -135,12 +125,17 @@ nav li + li {
 	background: rgba(20, 20, 20, 0.8);
 	color: #fff;
 	text-decoration: none;
-	font-size: 1.5rem;
+	font-size: 1.25rem;
+	font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+	padding: .5em 1.1em;
+	border-radius: 4px;
 }
 
 	.button:hover {
-		background: #000;
-		background: rgba(1, 1, 1, 0.8);
-
+		top: 0;
 		padding-bottom: .5em;
+		font-weight: normal;
+		text-decoration: none;
+		color: #fff;
+		background: rgb(235, 82, 89);
 	}
